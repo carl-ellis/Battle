@@ -27,7 +27,7 @@ class Mob
 	end
 
 	def dead?
-		return hp <= 0
+		return @hp <= 0
 	end
 
 	def to_s
