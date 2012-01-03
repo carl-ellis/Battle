@@ -31,7 +31,7 @@ class Battle
 				# does the defender dodge it?
 				if rand <= defender.dex
 
-          output += "but #{defender.name} dodges out of the way!"
+          				output += "but #{defender.name} dodges out of the way!"
 				else
 					# it connects!
 					output += "and connects with #{("%0.2f" % attacker.str).to_f} damage!"
