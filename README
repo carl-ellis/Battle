@@ -1,0 +1,7 @@
+Hashes names, then creates two fighters based on the seed.
+simple battle algoirthm is then used.
+
+Each round, a fighter is randomly chosen.
+If a random roll is underneath a fighters stamina score, it moves that round
+If the random roll is underneath the defenders dexity score, they dodge out of the way
+otherwise, a hit is scored, and health removed
