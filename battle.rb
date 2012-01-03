@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'json'
 require './mob.rb'
 
 class Battle
@@ -61,6 +62,13 @@ class Battle
 		output << "#{m1}\n"
 		output << "#{m2}\n"
 		return output
+	end
+
+	def to_json(*a)
+		{
+			"results" => self.results,
+			"winner" => self.winner.name
+		}.to_json(*a)
 	end
 
 end
