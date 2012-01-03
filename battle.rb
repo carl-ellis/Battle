@@ -1,15 +1,26 @@
+#!/usr/bin/env ruby
+
 require './mob.rb'
 
 class Battle
 
-	attr_accessor :m1, :m2
+	ATTACK_ATTEMPT = " takes a swing, "
+	DODGE_SUCCESS_1 = "but "
+	DODGE_SUCCESS_2 = " dodges out of the way!\n"
+	ATTACK_SUCCESS_1 = "and connects with "
+	ATTACK_SUCCESS_2 = " damage!\n"
+
+	attr_accessor :m1, :m2, :log
 
 	def initialize(m1, m2)
 		@m1 = m1
 		@m2 = m2
 	end
 
-	def start
+	def fight
+
+		#clear log
+		@log = ""
 
 		#set seed
 		srand
@@ -21,33 +32,34 @@ class Battle
 			attacker = (rand < 0.5) ? m1 : m2
 			defender = (attacker == m1) ? m2 : m1
 
-			output = ""
-
 			# enough stamina to attack?
 			if rand <= attacker.sta
 
-				output += "#{attacker.name} takes a swing, "
+				@log << "#{attacker.name}#{ATTACK_ATTEMPT}"
 
 				# does the defender dodge it?
 				if rand <= defender.dex
 
-          				output += "but #{defender.name} dodges out of the way!"
+          				@log << "#{DODGE_SUCCESS_1}#{defender.name}#{DODGE_SUCCESS_2}"
 				else
 					# it connects!
-					output += "and connects with #{("%0.2f" % attacker.str).to_f} damage!"
+					@log << "#{ATTACK_SUCCESS_1}#{("%0.2f" % attacker.str).to_f}#{ATTACK_SUCCESS_2}"
 					defender.hp -= attacker.str
 				end
 			end
-		
-			puts output if output != ""
 		end
+	end
 
-		puts "The winner is #{(m1.dead?)? m2.name : m1.name}!"
-		puts "---"
-		puts "Final stats:"
-		puts m1
-		puts m2
+	def results
 
+		output = "";
+		output << @log
+		output << "The winner is #{(m1.dead?)? m2.name : m1.name}!\n"
+		output << "---\n"
+		output << "Final stats:\n"
+		output << "#{m1}\n"
+		output << "#{m2}\n"
+		return output
 	end
 
 end
