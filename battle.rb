@@ -10,7 +10,7 @@ class Battle
 	ATTACK_SUCCESS_1 = "and connects with "
 	ATTACK_SUCCESS_2 = " damage!\n"
 
-	attr_accessor :m1, :m2, :log
+	attr_accessor :m1, :m2, :log, :winner
 
 	def initialize(m1, m2)
 		@m1 = m1
@@ -47,14 +47,15 @@ class Battle
 					defender.hp -= attacker.str
 				end
 			end
-		end
+		end  
+		@winner = (m1.dead?)? m2 : m1
 	end
 
 	def results
 
 		output = "";
 		output << @log
-		output << "The winner is #{(m1.dead?)? m2.name : m1.name}!\n"
+		output << "The winner is #{@winner.name}!\n"
 		output << "---\n"
 		output << "Final stats:\n"
 		output << "#{m1}\n"

@@ -4,4 +4,4 @@ simple battle algoirthm is then used.
 Each round, a fighter is randomly chosen.
 If a random roll is underneath a fighters stamina score, it moves that round
 If the random roll is underneath the defenders dexterity score, they dodge out of the way
-otherwise, a hit is scored, and health removed
+otherwise, a hit is scored, and health removed.
