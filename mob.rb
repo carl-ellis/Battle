@@ -8,7 +8,7 @@ class Mob
 
 		# Initialise the name and seed based on name
 		@name = name
-    @seed = @name.hash
+    		@seed = @name.hash
 		@hp = 1.0
 
 		# Set random seed
