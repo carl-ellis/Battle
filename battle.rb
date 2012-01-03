@@ -42,7 +42,7 @@ class Battle
 			puts output if output != ""
 		end
 
-		puts "The winner is #{(m1.dead?)? m2 : m1}!"
+		puts "The winner is #{(m1.dead?)? m2.name : m1.name}!"
 		puts "---"
 		puts "Final stats:"
 		puts m1
