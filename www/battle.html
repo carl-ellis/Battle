@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Name Battle</title>
+		<link rel='stylesheet' type='text/css' href='battle.css'/>
+		<script type="text/javascript">
+		// Shamelessly stolen from http://stackoverflow.com/questions/439463/how-to-get-get-and-post-variables-with-jquery
+
+		function getQueryParams(qs) {
+			qs = qs.split("+").join(" ");
+			var params = 	{},
+					tokens,
+					re = /[?&]?([^=]+)=([^&]*)/g;
+
+			while (tokens = re.exec(qs)) {
+				params[decodeURIComponent(tokens[1])]
+									= decodeURIComponent(tokens[2]);
+			}
+	    return params;
+		}
+
+		function fillForm() {
+			//Check to see if there are any GETS
+			var gets = getQueryParams(document.location.search);
+			if (gets['n1'] != null && gets['n2'] != null){
+				$('input#n1').val(gets['n1']);
+				$('input#n2').val(gets['n2']);
+			}
+		}
+
+		</script>
+  </head>
+  <body onLoad="fillForm();">
+    <h1>Name Battle</h1>
+			<div id="banner">
+			</div>
+			<div id="content">
+				<div id="setup">
+				<h2>Fight Setup!</h2>
+				<p>Enter the names of your fighters:</p>
+				<form id="fighters" action="#" method="post">
+					Fighter 1: <input id="n1" name="n1" type="text" value="Marko" />
+					Fighter 2: <input id="n2" name="n2" type="text" value="Polo" />
+					<input type="submit" value="Fight!" onClick="init(this.form);return false" />
+				</form>
+			</div>
+
+
+			<div id="results">
+				<h3>Results</h3>
+				<div id="loading">
+					<p>Loading</p>
+				</div> 
+				<div id="innerresults">
+				</div>
+			</div>
+
+			<div id="winner">
+			</div>
+
+			<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+			<script src="./battle.js"></script>
+			<script src="https://www.google.com/jsapi?key=ABQIAAAA-gjmxaDB3fqCkSSghsgw4xTHM_W25ZeRtAPF_iXTyz_EnmWqChSScR-h4EZAna3qC7DDoth-zr9cuw" type="text/javascript"></script>
+    </div>
+		<div id="footer">
+		</div>
+  </body>
+</html>
+

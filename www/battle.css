@@ -1,0 +1,133 @@
+/* Main page style */
+body {
+	text-align: center;
+	background: #ccc;
+	font-family: sans-serif, monospace;
+}
+
+h1 {
+	display: none;
+}
+
+h2, h3 {
+	margin: 0;
+	padding-top: 1em;
+	color: #6c8cd5;
+}
+
+div#content {
+	background: #fff;
+	width: 90%;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border-right: 3px solid #06266f;
+	border-left: 3px solid #06266f;
+}
+
+div#setup  {
+	margin-bottom: 2em;
+}
+
+div#banner {
+	width: 90%;
+	background: #06266f url('logo.png') no-repeat center center;
+	height: 4em;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border-right: 3px solid #06266f;
+	border-left: 3px solid #06266f;
+}
+
+div#footer {
+	width: 90%;
+	background: #06266f;
+	height: 4em;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border-right: 3px solid #06266f;
+	border-left: 3px solid #06266f;
+}
+
+
+/** Game stuff */
+div#loading {
+	display: none;
+	background: #6c8cd5;
+	border: 2px outset #4671d5;
+
+	position: relative;
+	top: 50%;
+	width: 90%;
+
+	text-align: center;
+	margin-left: auto ;
+	margin-right: auto;
+	padding: 1em;
+	margin: 1em;
+}
+
+
+div#results {
+	border-top: 2px dotted #1240ab;
+	display: block;
+	width: 50%;
+	text-align: center;
+	margin-left: auto ;
+	margin-right: auto;
+	height: 30em;
+	overflow: auto;
+}
+
+div#innerresults {
+	vertical-align: top;
+}
+
+p.action, a.action {
+	display: none;
+}
+
+div#winner {
+	display: none;
+	background: #fff;
+	border: 2px solid #06266f;
+
+	position: fixed;
+	top: 40%;
+	width: 70%;
+	left: 15%; 
+
+	text-align: center;
+	margin-left: auto ;
+	margin-right: auto;
+	padding: 1em;
+	margin: 1em;
+}
+
+div#winner div {
+
+	display: inline-block;
+	vertical-align: top;
+	height: 250px;
+	width: 50%;
+}
+
+div#winner div p {
+	margin-top: 20%;
+	font-size: Larger;
+	font-weight: bold;
+}
+
+div#winner a {
+
+	display: block;
+}
+
+img#winner {
+
+	display: inline-block;
+	margin-right: 1em;
+}
+
