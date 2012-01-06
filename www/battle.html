@@ -27,6 +27,18 @@
 			}
 		}
 
+		function updateURL(form){
+			// Grab values from form
+			n1 = form.n1.value;
+			n2 = form.n2.value;
+
+			// Null check
+			if (n1 != "" && n2 != "") {
+				history.pushState({},"Battle","battle.html?n1=" + n1 + "&n2=" + n2 +"#");
+			}
+		}
+
+
 		</script>
   </head>
   <body onLoad="fillForm();">
@@ -40,7 +52,7 @@
 				<form id="fighters" action="#" method="post">
 					Fighter 1: <input id="n1" name="n1" type="text" value="Marko" />
 					Fighter 2: <input id="n2" name="n2" type="text" value="Polo" />
-					<input type="submit" value="Fight!" onClick="init(this.form);return false" />
+					<input type="submit" value="Fight!" onClick="updateURL(this.form);init(this.form);return false" />
 				</form>
 			</div>
 
